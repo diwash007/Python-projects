@@ -1,0 +1,85 @@
+body {
+	background-color:hsl(185, 75%, 39%);
+	font-family: 'Kumbh Sans', sans-serif;
+	background-image: url(./images/bg-pattern-top.svg), url(./images/bg-pattern-bottom.svg);
+    background-repeat: no-repeat;
+    background-position: right 50vw bottom 45vh, left 50vw top 45vh;
+    height: 100vh;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card {
+	align-items: center;
+	height: 360px;
+	width: 320px;
+	margin:auto;
+	overflow: hidden;
+	border-radius: 10px;
+	background-color:white;
+}
+
+.cover-page, .avatar img{
+	margin: 0 auto;
+	position: absolute;
+	overflow: hidden;
+
+}
+
+.cover-page {
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	width:320px;
+}
+
+.avatar img {
+	border-radius:50%;
+	margin:86px 106px 0px 106px;
+	border: 6px solid white;
+}
+
+.info {
+	margin:190px 0px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	color: hsl(229, 23%, 23%);
+}
+
+.basic {
+	margin: 0 auto;
+}
+
+.age {
+	padding-left: 10px;
+	font-weight:400;
+	color: hsl(227, 10%, 46%);
+}
+
+.location {
+	margin: 0 auto;
+	margin-top: -10px;
+	color: hsl(227, 10%, 46%);
+}
+
+.stat {
+	border-top: solid thin hsl(0, 0%, 89%);
+	margin: 20px 0;
+	display: flex;
+}
+
+.followers, .likes, .photos {
+	text-align: center;
+	flex: 1 1 0px;
+}
+
+.stat small {
+	color: hsl(227, 10%, 46%);
+}
+
+.stat h3 {
+	margin-bottom:5px;
+}
