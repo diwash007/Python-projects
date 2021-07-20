@@ -11,7 +11,7 @@ def matrix(text,is_key=False):
         try:
             row.append(alphabet.index(text[i+1]))
         except:
-            row.append(0)
+            row.append(23)
         if not is_key:
             row = np.array(row)
         text_matrix.append(row)
@@ -47,24 +47,27 @@ def decode(text_matrix, key_matrix):
 
 print("HILL CYPHER\n")
 while not end_program:
-    direction = input("\nType 'encode' to encrypt, type 'decode' to decrypt:\n")
-    text = input("Enter text: ")
-    key = input("Enter key [of 4 letters]: ")
-    plain_matrix = matrix(text)
-    key_matrix = matrix(key, True)
     try:
-        result = decode(plain_matrix, key_matrix)
+        direction = input("\nType 'encode' to encrypt, type 'decode' to decrypt:\n")
+        text = input("Enter text: ")
+        key = input("Enter key [of 4 letters]: ")
+        plain_matrix = matrix(text)
+        key_matrix = matrix(key, True)
+        try:
+            result = decode(plain_matrix, key_matrix)
+        except:
+            print(f"\nThe key '{key}' cannot work with hill cypher. Please try with different key.\n")
+            continue
+        if direction == "decode":
+            print(f"The {direction}d text is {result}.")
+        elif direction == "encode":
+            result = encode(plain_matrix, key_matrix)
+            print(f"The {direction}d text is {result}.")
+        else:
+            print("Invalid input!!\n")
+            continue
     except:
-        print(f"\nThe key '{key}' cannot work with hill cypher. Please try with different key.\n")
-        continue
-    if direction == "decode":
-        print(f"The {direction}d text is {result}.")
-    elif direction == "encode":
-        result = encode(plain_matrix, key_matrix)
-        print(f"The {direction}d text is {result}.")
-    else:
-        print("Invalid input!!\n")
-        continue
+        print("\nINVALID INPUT!!\n1. Input text should contain only alphabets\n 2. Key must contain 4 digits alphabets")
 
     rs = input("\nWould you like to restart the program?[yes/no]")
     if not rs == "yes":
