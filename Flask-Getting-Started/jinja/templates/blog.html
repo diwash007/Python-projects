@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>blog</title>
+</head>
+<body>
+	{% for post in posts: %}
+		{% if post["title"]=="wtheck":%}
+			{{ "nigga" }}
+		{% endif %}
+		<h1>{{ post["title"] }}</h1>
+		<h2>{{ post["subtitle"] }}</h2>
+	{% endfor %}
+</body>
+</html>
